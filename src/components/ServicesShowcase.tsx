@@ -1,0 +1,176 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { SERVICES_DATA, WHATSAPP_API_BASE, WHATSAPP_NUMBER } from '../data';
+import { Grid, MessageSquare, ChevronRight } from 'lucide-react';
+
+const CATEGORIES = [
+  { id: 'all', label: 'Todos', icon: Grid },
+  { id: 'janelas', label: 'Janelas', icon: ChevronRight },
+  { id: 'portas', label: 'Portas', icon: ChevronRight },
+  { id: 'fachadas', label: 'Fachadas', icon: ChevronRight },
+  { id: 'vidros', label: 'Vidros', icon: ChevronRight },
+];
+
+const CATEGORY_IMAGES: Record<string, { src: string; alt: string; badge: string }> = {
+  all: {
+    src: '/src/assets/images/project_brise_ripado_1782318999919.jpg',
+    alt: 'Brises e Ripados de Alumínio Premium',
+    badge: 'Destaque: Ripados & Brises'
+  },
+  janelas: {
+    src: '/src/assets/images/project_janela_maximar_1782319028030.jpg',
+    alt: 'Janela Maxim-Ar de Alumínio Preto',
+    badge: 'Linhas Suprema & Gold'
+  },
+  portas: {
+    src: '/src/assets/images/project_porta_de_correr_1782318984510.jpg',
+    alt: 'Porta de Correr Minimalista Premium',
+    badge: 'Grandes Vãos & Suavidade'
+  },
+  fachadas: {
+    src: '/src/assets/images/project_pele_de_vidro_1782318971334.jpg',
+    alt: 'Fachada em Pele de Vidro Estrutural',
+    badge: 'Glazing & ACM'
+  },
+  vidros: {
+    src: '/src/assets/images/project_vidro_temperado_1782319966784.jpg',
+    alt: 'Projetos em Vidro Temperado de Segurança',
+    badge: 'Alta Resistência'
+  }
+};
+
+export default function ServicesShowcase() {
+  const [activeTab, setActiveTab] = useState<string>('all');
+
+  const filteredServices = activeTab === 'all'
+    ? SERVICES_DATA
+    : SERVICES_DATA.filter((s) => s.category === activeTab);
+
+  const currentBanner = CATEGORY_IMAGES[activeTab] || CATEGORY_IMAGES.all;
+
+  return (
+    <section id="services" className="w-full max-w-md mx-auto px-4 py-8">
+      {/* Section Title */}
+      <div className="flex flex-col items-center mb-6">
+        <h2 className="font-display font-extrabold text-xl text-white tracking-tight flex items-center gap-2">
+          Nossos Serviços
+        </h2>
+        <div className="w-12 h-1 bg-brand-orange mt-2 rounded-full" />
+        <p className="text-gray-400 text-xs mt-2 text-center">
+          Clique nas categorias para explorar soluções sob medida
+        </p>
+      </div>
+
+      {/* Category Tabs Scroll */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-3 scrollbar-none scroll-smooth -mx-4 px-4 mb-4">
+        {CATEGORIES.map((cat) => {
+          const isActive = activeTab === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-1.5 cursor-pointer border ${
+                isActive
+                  ? 'bg-brand-orange text-white border-brand-orange shadow-md shadow-brand-orange/25'
+                  : 'bg-brand-card/60 text-gray-300 border-brand-card-border hover:text-white hover:bg-brand-card'
+              }`}
+            >
+              <span>{cat.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Dynamic Visual Banner */}
+      <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-6 border border-brand-card-border/80 bg-brand-card group">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={activeTab}
+            src={currentBanner.src}
+            alt={currentBanner.alt}
+            referrerPolicy="no-referrer"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.45 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+        
+        {/* Banner Details */}
+        <div className="absolute bottom-4 left-4 right-4 flex flex-col items-start">
+          <span className="inline-block text-[9px] uppercase tracking-wider font-mono bg-brand-orange text-white font-bold px-2 py-0.5 rounded-md mb-1.5 shadow-sm">
+            {currentBanner.badge}
+          </span>
+          <h3 className="text-sm font-display font-bold text-white tracking-tight text-shadow-premium">
+            {currentBanner.alt}
+          </h3>
+        </div>
+      </div>
+
+      {/* Services List Grid */}
+      <div className="flex flex-col gap-3.5">
+        <AnimatePresence mode="popLayout">
+          {filteredServices.map((service, idx) => {
+            const categoryLabel = CATEGORIES.find(c => c.id === service.category)?.label || '';
+            const whatsappUrl = `${WHATSAPP_API_BASE}?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(service.whatsappMessage)}`;
+
+            return (
+              <motion.div
+                key={service.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                className="p-4 rounded-2xl bg-brand-card/60 border border-brand-card-border hover:border-brand-orange/30 hover:bg-brand-card/90 transition-all duration-300 group"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    {/* Badge Category */}
+                    <span className="inline-block text-[10px] uppercase tracking-wider font-mono text-brand-orange font-bold px-2 py-0.5 rounded bg-brand-orange/10 mb-2">
+                      {categoryLabel}
+                    </span>
+                    <h3 className="font-display font-bold text-[15px] text-white tracking-tight group-hover:text-brand-orange transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed mt-1.5 font-sans">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card Actions */}
+                <div className="mt-4 pt-3.5 border-t border-brand-card-border flex items-center justify-between gap-2">
+                  <span className="text-[10px] text-gray-400 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Consulte Orçamento Grátis
+                  </span>
+
+                  <a
+                    id={`service-cta-${service.id}`}
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand-dark hover:bg-brand-orange/20 border border-brand-orange/30 hover:border-brand-orange text-brand-orange text-xs font-semibold transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Solicitar Preço</span>
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+    </section>
+  );
+}

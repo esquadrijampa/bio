@@ -1,0 +1,6 @@
+{
+  "name": "Esquadrijampa",
+  "description": "Página de links na bio e apresentação oficial da Esquadrijampa, especializada em esquadrias de alumínio premium, fachadas ACM e pele de vidro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
