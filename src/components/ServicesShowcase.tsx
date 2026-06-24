@@ -8,6 +8,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { SERVICES_DATA, WHATSAPP_API_BASE, WHATSAPP_NUMBER } from '../data';
 import { Grid, MessageSquare, ChevronRight } from 'lucide-react';
 
+import imgBriseRipado from '../assets/images/project_brise_ripado_1782318999919.jpg';
+import imgJanelaMaximar from '../assets/images/project_janela_maximar_1782319028030.jpg';
+import imgPortaCorrer from '../assets/images/project_porta_de_correr_1782318984510.jpg';
+import imgPeleVidro from '../assets/images/project_pele_de_vidro_1782318971334.jpg';
+import imgVidroTemperado from '../assets/images/project_vidro_temperado_1782319966784.jpg';
+
 const CATEGORIES = [
   { id: 'all', label: 'Todos', icon: Grid },
   { id: 'janelas', label: 'Janelas', icon: ChevronRight },
@@ -18,27 +24,27 @@ const CATEGORIES = [
 
 const CATEGORY_IMAGES: Record<string, { src: string; alt: string; badge: string }> = {
   all: {
-    src: '/src/assets/images/project_brise_ripado_1782318999919.jpg',
+    src: imgBriseRipado,
     alt: 'Brises e Ripados de Alumínio Premium',
     badge: 'Destaque: Ripados & Brises'
   },
   janelas: {
-    src: '/src/assets/images/project_janela_maximar_1782319028030.jpg',
+    src: imgJanelaMaximar,
     alt: 'Janela Maxim-Ar de Alumínio Preto',
     badge: 'Linhas Suprema & Gold'
   },
   portas: {
-    src: '/src/assets/images/project_porta_de_correr_1782318984510.jpg',
+    src: imgPortaCorrer,
     alt: 'Porta de Correr Minimalista Premium',
     badge: 'Grandes Vãos & Suavidade'
   },
   fachadas: {
-    src: '/src/assets/images/project_pele_de_vidro_1782318971334.jpg',
+    src: imgPeleVidro,
     alt: 'Fachada em Pele de Vidro Estrutural',
     badge: 'Glazing & ACM'
   },
   vidros: {
-    src: '/src/assets/images/project_vidro_temperado_1782319966784.jpg',
+    src: imgVidroTemperado,
     alt: 'Projetos em Vidro Temperado de Segurança',
     badge: 'Alta Resistência'
   }

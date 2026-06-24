@@ -4,6 +4,14 @@
  */
 
 import { Servico, Project, Differential, SocialLink } from './types';
+import logoUrl from './assets/images/esquadrijampa_logo_1782318955326.jpg';
+
+import imgPeleVidro from './assets/images/project_pele_de_vidro_1782318971334.jpg';
+import imgPortaCorrer from './assets/images/project_porta_de_correr_1782318984510.jpg';
+import imgBriseRipado from './assets/images/project_brise_ripado_1782318999919.jpg';
+import imgFachadaAcm from './assets/images/project_fachada_acm_1782319013225.jpg';
+import imgJanelaMaximar from './assets/images/project_janela_maximar_1782319028030.jpg';
+import imgPortaPivotante from './assets/images/project_porta_pivotante_1782319043523.jpg';
 
 export const WHATSAPP_NUMBER = '5583991255555'; // João Pessoa (Paraíba) - Customizable standard placeholder
 export const WHATSAPP_API_BASE = 'https://api.whatsapp.com/send';
@@ -12,7 +20,7 @@ export const CONTACT_EMAIL = 'mktesquadrijampa@gmail.com';
 export const INSTAGRAM_HANDLE = 'esquadrijampa';
 export const TELEPHONE_NUMBER = '+55 (83) 99125-5555';
 
-export const LOGO_URL = '/src/assets/images/esquadrijampa_logo_1782318955326.jpg';
+export const LOGO_URL = logoUrl;
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -130,7 +138,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'proj-1',
     title: 'Pele de Vidro de Alto Padrão',
     category: 'Fachadas e Estruturas',
-    image: '/src/assets/images/project_pele_de_vidro_1782318971334.jpg',
+    image: imgPeleVidro,
     description: 'Fachada moderna de grande vão em pele de vidro com vidros refletivos de alta performance e perfis bronze.',
     whatsappMessage: 'Gostei muito do projeto de Pele de Vidro de Alto Padrão! Quero um orçamento parecido para o meu projeto.'
   },
@@ -138,15 +146,15 @@ export const PROJECTS_DATA: Project[] = [
     id: 'proj-2',
     title: 'Porta de Correr Minimalista',
     category: 'Portas',
-    image: '/src/assets/images/project_porta_de_correr_1782318984510.jpg',
-    description: 'Porta de correr de alumínio preto com trilhos embutidos e roldanas blindadas para integração total com a piscina.',
+    image: imgPortaCorrer,
+    description: 'Porta de correr de alumínio preto with trilhos embutidos e roldanas blindadas para integração total com a piscina.',
     whatsappMessage: 'Gostei muito da Porta de Correr Minimalista que vi no portfólio! Quero um orçamento desse sistema para minha obra.'
   },
   {
     id: 'proj-3',
     title: 'Ripados e Brise Solar',
     category: 'Fachadas e Estruturas',
-    image: '/src/assets/images/project_brise_ripado_1782318999919.jpg',
+    image: imgBriseRipado,
     description: 'Ripado de alumínio com efeito amadeirado premium e brises direcionais para proteção solar inteligente da fachada.',
     whatsappMessage: 'Gostei muito do projeto com Ripados e Brises de Alumínio! Poderia me passar informações de valores por m²?'
   },
@@ -154,7 +162,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'proj-4',
     title: 'Fachada Corporativa em ACM',
     category: 'Fachadas e Estruturas',
-    image: '/src/assets/images/project_fachada_acm_1782319013225.jpg',
+    image: imgFachadaAcm,
     description: 'Revestimento de fachada com chapas de ACM em cinza chumbo com recortes precisos e acabamento impecável.',
     whatsappMessage: 'Vi o projeto da Fachada Corporativa em ACM no seu site e gostaria de solicitar um orçamento semelhante.'
   },
@@ -162,7 +170,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'proj-5',
     title: 'Janela Maxim-Ar Integrada',
     category: 'Janelas',
-    image: '/src/assets/images/project_janela_maximar_1782319028030.jpg',
+    image: imgJanelaMaximar,
     description: 'Janela maxim-ar com esquadria robusta na cor preta, ideal para vedações severas e ventilação superior.',
     whatsappMessage: 'Gostei da Janela Maxim-Ar Integrada. Gostaria de solicitar um orçamento para janelas desse tipo.'
   },
@@ -170,7 +178,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'proj-6',
     title: 'Porta Pivotante de Entrada',
     category: 'Portas',
-    image: '/src/assets/images/project_porta_pivotante_1782319043523.jpg',
+    image: imgPortaPivotante,
     description: 'Porta pivotante de entrada principal com ripado de alumínio preto e puxador em inox escovado de 1.8m.',
     whatsappMessage: 'Gostei demais do projeto da Porta Pivotante de Entrada! Quero solicitar um orçamento para a entrada da minha obra.'
   }
