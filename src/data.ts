@@ -66,11 +66,11 @@ export const SERVICES_DATA: Servico[] = [
     whatsappMessage: 'Olá Esquadrijampa! Gostaria de um orçamento para Janela do tipo Maxim-Ar.'
   },
   {
-    id: 'janela-boca-lobo',
+    id: 'janela-ventilacao-permanente',
     category: 'janelas',
-    title: 'Janela Boca de Lobo',
+    title: 'Janela Ventilação Permanente',
     description: 'Estilo clássico e funcional que otimiza o espaço de circulação e ventilação em sua residência.',
-    whatsappMessage: 'Olá Esquadrijampa! Gostaria de mais informações e orçamento para Janela Boca de Lobo.'
+    whatsappMessage: 'Olá Esquadrijampa! Gostaria de mais informações e orçamento para Janela Ventilação Permanente.'
   },
   // Portas
   {

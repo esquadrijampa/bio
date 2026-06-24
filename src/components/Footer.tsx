@@ -60,6 +60,27 @@ export default function Footer() {
           João Pessoa, PB — Brasil
         </p>
       </div>
+
+      {/* Desenvolvido por Webconverte */}
+      <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-center gap-1">
+        <span className="text-[9px] uppercase font-mono tracking-widest text-slate-400 font-medium">
+          Desenvolvido por
+        </span>
+        <a
+          href="https://webconverte.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:opacity-85 transition-opacity cursor-pointer"
+          id="footer-webconverte-link"
+        >
+          <span className="text-[15px] font-sans font-light tracking-widest text-[#8cc63f] leading-none">
+            WEB
+          </span>
+          <span className="text-[15px] font-sans font-medium tracking-widest text-[#1b365d] leading-none ml-0.5">
+            CONVERTE
+          </span>
+        </a>
+      </div>
     </footer>
   );
 }
