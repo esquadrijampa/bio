@@ -20,15 +20,6 @@ export default function QuickLinks() {
       action: null
     },
     {
-      id: 'projetos',
-      label: 'Veja Nossos Projetos',
-      subtitle: 'Acompanhe nossa galeria no Instagram',
-      url: `https://instagram.com/${INSTAGRAM_HANDLE}`,
-      icon: Image,
-      highlight: false,
-      action: null
-    },
-    {
       id: 'especialista',
       label: 'Falar com Especialista',
       subtitle: 'Tire suas dúvidas técnicas sobre esquadrias',
@@ -56,8 +47,8 @@ export default function QuickLinks() {
             transition={{ delay: 0.3 + idx * 0.1, duration: 0.4 }}
             className={`relative flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 select-none group cursor-pointer ${
               link.highlight
-                ? 'bg-gradient-to-r from-brand-orange to-brand-orange-hover text-white border-transparent shadow-[0_4px_20px_rgba(232,122,42,0.35)] hover:shadow-[0_6px_25px_rgba(232,122,42,0.5)] scale-[1.02]'
-                : 'bg-brand-card/70 text-gray-100 border-brand-card-border hover:border-brand-orange/40 hover:bg-brand-card/90'
+                ? 'bg-gradient-to-r from-brand-orange to-brand-orange-hover text-white border-transparent shadow-[0_4px_20px_rgba(232,122,42,0.2)] hover:shadow-[0_6px_25px_rgba(232,122,42,0.3)] scale-[1.02]'
+                : 'bg-slate-50 text-slate-800 border-slate-200 hover:border-brand-orange/40 hover:bg-slate-100/70 shadow-sm'
             }`}
           >
             <div className="flex items-center gap-3.5">
@@ -66,7 +57,7 @@ export default function QuickLinks() {
                 className={`p-2.5 rounded-xl transition-colors duration-300 ${
                   link.highlight
                     ? 'bg-white/10 text-white'
-                    : 'bg-brand-dark text-brand-orange group-hover:bg-brand-orange group-hover:text-white'
+                    : 'bg-white text-brand-orange border border-slate-200 group-hover:bg-brand-orange group-hover:text-white group-hover:border-transparent'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -79,7 +70,7 @@ export default function QuickLinks() {
                 </span>
                 <span
                   className={`text-[11px] font-sans mt-0.5 ${
-                    link.highlight ? 'text-white/80' : 'text-gray-400 group-hover:text-gray-300'
+                    link.highlight ? 'text-white/80' : 'text-slate-500 group-hover:text-slate-600'
                   }`}
                 >
                   {link.subtitle}

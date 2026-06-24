@@ -29,15 +29,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark text-gray-100 font-sans relative overflow-x-hidden pb-10">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans relative overflow-x-hidden pb-10">
       
       {/* Visual Ambient Auras (Glow effects) */}
-      <div className="absolute top-[-10%] left-[-20%] w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] rounded-full bg-brand-orange/10 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-[-10%] left-[-20%] w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] rounded-full bg-brand-orange/5 blur-[100px] pointer-events-none z-0" />
       <div className="absolute top-[40%] right-[-20%] w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] rounded-full bg-brand-gold/5 blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] left-[-10%] w-[70vw] h-[70vw] sm:w-[40vw] sm:h-[40vw] rounded-full bg-brand-orange/5 blur-[100px] pointer-events-none z-0" />
 
       {/* Main Single Column Container (Link-in-Bio Standard Layout) */}
-      <div className="relative z-10 w-full max-w-lg mx-auto bg-brand-dark/40 sm:bg-brand-dark/70 sm:border-l sm:border-r sm:border-brand-card-border sm:shadow-[0_0_50px_rgba(0,0,0,0.8)] min-h-screen flex flex-col">
+      <div className="relative z-10 w-full max-w-lg mx-auto bg-white sm:border-l sm:border-r sm:border-brand-card-border/80 sm:shadow-[0_4px_30px_rgba(15,23,42,0.06)] min-h-screen flex flex-col">
         
         {/* Top Banner Accent */}
         <div className="h-1.5 w-full bg-gradient-to-r from-brand-orange via-brand-gold to-brand-orange" />
@@ -98,7 +98,7 @@ export default function App() {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
-              className="p-3 rounded-full bg-brand-card hover:bg-brand-orange border border-brand-card-border hover:border-brand-orange text-white shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
+              className="p-3 rounded-full bg-brand-card hover:bg-brand-orange border border-brand-card-border hover:border-brand-orange text-slate-700 hover:text-white shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
               aria-label="Voltar ao Topo"
               title="Voltar ao Topo"
             >

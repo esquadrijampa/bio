@@ -13,12 +13,12 @@ import imgFachadaAcm from './assets/images/project_fachada_acm_1782319013225.jpg
 import imgJanelaMaximar from './assets/images/project_janela_maximar_1782319028030.jpg';
 import imgPortaPivotante from './assets/images/project_porta_pivotante_1782319043523.jpg';
 
-export const WHATSAPP_NUMBER = '5583991255555'; // João Pessoa (Paraíba) - Customizable standard placeholder
+export const WHATSAPP_NUMBER = '558393233500'; // João Pessoa (Paraíba) - Updated to +55 (83) 9323-3500
 export const WHATSAPP_API_BASE = 'https://api.whatsapp.com/send';
 
-export const CONTACT_EMAIL = 'mktesquadrijampa@gmail.com';
+export const CONTACT_EMAIL = 'esquadrijampa@gmail.com';
 export const INSTAGRAM_HANDLE = 'esquadrijampa';
-export const TELEPHONE_NUMBER = '+55 (83) 99125-5555';
+export const TELEPHONE_NUMBER = '+55 (83) 9323-3500';
 
 export const LOGO_URL = logoUrl;
 
@@ -27,7 +27,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     platform: 'whatsapp',
     url: `${WHATSAPP_API_BASE}?phone=${WHATSAPP_NUMBER}&text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20esquadrias.`,
     label: 'WhatsApp',
-    value: '(83) 99125-5555'
+    value: '(83) 9323-3500'
   },
   {
     platform: 'instagram',
@@ -43,9 +43,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     platform: 'phone',
-    url: `tel:+5583991255555`,
+    url: `tel:+558393233500`,
     label: 'Telefone',
-    value: '(83) 99125-5555'
+    value: '(83) 9323-3500'
   }
 ];
 

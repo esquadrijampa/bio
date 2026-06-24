@@ -36,7 +36,7 @@ export default function Header() {
         id="share-btn"
         onClick={handleShare}
         aria-label="Compartilhar link"
-        className="absolute top-4 right-4 p-2.5 rounded-full bg-brand-card/80 border border-brand-card-border text-gray-300 hover:text-brand-orange hover:bg-brand-card transition-all cursor-pointer backdrop-blur-sm"
+        className="absolute top-4 right-4 p-2.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 hover:text-brand-orange hover:bg-slate-200/80 transition-all cursor-pointer backdrop-blur-sm"
       >
         <Share2 className="w-5 h-5" />
       </button>
@@ -49,14 +49,14 @@ export default function Header() {
         className="relative mb-4 group"
       >
         {/* Outer glowing border */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-orange to-brand-gold blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-orange to-brand-gold blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
         
         <div className="relative w-24 h-24 rounded-full p-[3px] bg-gradient-to-tr from-brand-orange via-brand-gold to-brand-orange">
           <img
             src={LOGO_URL}
             alt="Logo Esquadrijampa"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover rounded-full bg-brand-dark"
+            className="w-full h-full object-cover rounded-full bg-white"
           />
         </div>
       </motion.div>
@@ -68,7 +68,7 @@ export default function Header() {
         transition={{ delay: 0.1, duration: 0.4 }}
         className="flex items-center gap-1.5 mb-1"
       >
-        <h1 className="font-display font-extrabold text-2xl tracking-tight text-white">
+        <h1 className="font-display font-extrabold text-2xl tracking-tight text-slate-900">
           Esquadrijampa
         </h1>
         <CheckCircle className="w-5 h-5 text-brand-orange fill-brand-orange/10 shrink-0" />
@@ -100,7 +100,7 @@ export default function Header() {
         initial={{ y: 15, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.25, duration: 0.4 }}
-        className="text-gray-300 text-sm leading-relaxed max-w-sm"
+        className="text-slate-600 text-sm leading-relaxed max-w-sm"
       >
         Fabricação e instalação de esquadrias de alumínio, brises, ripados, fachada ACM e pele de vidro. Sua obra merece alto padrão. 🏗️
       </motion.p>
@@ -112,7 +112,7 @@ export default function Header() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-3 rounded-xl bg-brand-card border border-brand-orange/30 shadow-2xl text-white text-sm"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-3 rounded-xl bg-white border border-slate-200 shadow-2xl text-slate-800 text-sm font-medium"
           >
             <Check className="w-4 h-4 text-brand-orange" />
             <span>Link copiado com sucesso!</span>

@@ -12,7 +12,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full max-w-md mx-auto px-4 pt-4 pb-12 mt-4 text-center border-t border-brand-card-border/60">
+    <footer className="w-full max-w-md mx-auto px-4 pt-4 pb-12 mt-4 text-center border-t border-slate-200">
       
       {/* Social Icons Grid */}
       <div className="grid grid-cols-2 gap-2 mb-6">
@@ -30,15 +30,15 @@ export default function Footer() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-2xl bg-brand-card/50 border border-brand-card-border hover:border-brand-orange/40 hover:bg-brand-card transition-all flex flex-col items-center justify-center gap-1.5 group cursor-pointer"
+              className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-orange/40 hover:bg-slate-100 transition-all flex flex-col items-center justify-center gap-1.5 group cursor-pointer shadow-xs"
             >
-              <div className="p-2 rounded-xl bg-brand-dark text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors">
+              <div className="p-2 rounded-xl bg-white border border-slate-200 text-brand-orange group-hover:bg-brand-orange group-hover:text-white group-hover:border-transparent transition-colors">
                 <Icon className="w-4 h-4" />
               </div>
-              <span className="text-[10px] text-gray-500 font-mono font-bold tracking-wider uppercase">
+              <span className="text-[10px] text-slate-500 font-mono font-bold tracking-wider uppercase">
                 {link.label}
               </span>
-              <span className="text-xs text-white group-hover:text-brand-orange transition-colors truncate max-w-[120px] font-sans">
+              <span className="text-xs text-slate-800 group-hover:text-brand-orange transition-colors truncate max-w-[120px] font-sans">
                 {link.value}
               </span>
             </a>
@@ -52,11 +52,11 @@ export default function Footer() {
           Sua obra merece o melhor
         </p>
         
-        <p className="text-gray-500 text-[10px] tracking-wide mt-1">
+        <p className="text-slate-500 text-[10px] tracking-wide mt-1">
           © {year} Esquadrijampa — Todos os direitos reservados
         </p>
         
-        <p className="text-gray-600 text-[9px] mt-1 font-mono">
+        <p className="text-slate-600 text-[9px] mt-1 font-mono">
           João Pessoa, PB — Brasil
         </p>
       </div>

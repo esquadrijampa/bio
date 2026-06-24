@@ -8,10 +8,10 @@
 
   --color-brand-orange: #E87A2A;
   --color-brand-orange-hover: #D0651A;
-  --color-brand-gold: #C8963E;
-  --color-brand-dark: #121212;
-  --color-brand-card: #1E1E1E;
-  --color-brand-card-border: #2D2D2D;
+  --color-brand-gold: #B47C1C;
+  --color-brand-dark: #FFFFFF;
+  --color-brand-card: #F8FAFC;
+  --color-brand-card-border: #E2E8F0;
 }
 
 @layer utilities {
