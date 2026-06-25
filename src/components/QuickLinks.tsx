@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { MessageSquare, PhoneCall, Image } from 'lucide-react';
+import { MessageSquare, PhoneCall, Image, Globe } from 'lucide-react';
 import { WHATSAPP_API_BASE, WHATSAPP_NUMBER, INSTAGRAM_HANDLE } from '../data';
 
 export default function QuickLinks() {
@@ -25,6 +25,15 @@ export default function QuickLinks() {
       subtitle: 'Tire suas dúvidas técnicas sobre esquadrias',
       url: `${WHATSAPP_API_BASE}?phone=${WHATSAPP_NUMBER}&text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20técnico%20sobre%20as%20esquadrias.`,
       icon: PhoneCall,
+      highlight: false,
+      action: null
+    },
+    {
+      id: 'website',
+      label: 'Acesse Nosso Site',
+      subtitle: 'Conheça nosso catálogo e portfólio completo',
+      url: 'https://esquadrijampa.com.br',
+      icon: Globe,
       highlight: false,
       action: null
     }
