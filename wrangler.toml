@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "esquadrijampa"
+name = "bio"
 compatibility_date = "2026-06-24"
 
 [assets]
