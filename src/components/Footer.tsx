@@ -7,6 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Instagram, MessageCircle, Mail, Phone, ExternalLink } from 'lucide-react';
 import { SOCIAL_LINKS } from '../data';
+import { trackButtonClick } from '../utils/gtm';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -28,6 +29,14 @@ export default function Footer() {
               key={link.platform}
               id={`footer-social-${link.platform}`}
               href={link.url}
+              onClick={() => {
+                trackButtonClick({
+                  buttonId: `footer-social-${link.platform}`,
+                  buttonText: `Footer: ${link.label} (${link.value})`,
+                  buttonUrl: link.url,
+                  clickCategory: 'footer_social_links'
+                });
+              }}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-orange/40 hover:bg-slate-100 transition-all flex flex-col items-center justify-center gap-1.5 group cursor-pointer shadow-xs"
@@ -70,6 +79,14 @@ export default function Footer() {
           href="https://webconverte.com.br"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            trackButtonClick({
+              buttonId: 'footer-webconverte-link',
+              buttonText: 'Desenvolvido por Webconverte',
+              buttonUrl: 'https://webconverte.com.br',
+              clickCategory: 'footer_developer_link'
+            });
+          }}
           className="flex items-center hover:opacity-85 transition-opacity cursor-pointer"
           id="footer-webconverte-link"
         >

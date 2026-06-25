@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SERVICES_DATA, WHATSAPP_API_BASE, WHATSAPP_NUMBER } from '../data';
 import { Grid, MessageSquare, ChevronRight } from 'lucide-react';
+import { trackButtonClick } from '../utils/gtm';
 
 import imgBriseRipado from '../assets/images/project_brise_ripado_1782318999919.jpg';
 import imgJanelaMaximar from '../assets/images/project_janela_maximar_1782319028030.jpg';
@@ -79,7 +80,14 @@ export default function ServicesShowcase() {
           return (
             <button
               key={cat.id}
-              onClick={() => setActiveTab(cat.id)}
+              onClick={() => {
+                setActiveTab(cat.id);
+                trackButtonClick({
+                  buttonId: `category-tab-${cat.id}`,
+                  buttonText: `Filtrar Categoria: ${cat.label}`,
+                  clickCategory: 'services_navigation'
+                });
+              }}
               className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-1.5 cursor-pointer border ${
                 isActive
                   ? 'bg-brand-orange text-white border-brand-orange shadow-md shadow-brand-orange/25'
@@ -164,6 +172,14 @@ export default function ServicesShowcase() {
                   <a
                     id={`service-cta-${service.id}`}
                     href={whatsappUrl}
+                    onClick={() => {
+                      trackButtonClick({
+                        buttonId: `service-cta-${service.id}`,
+                        buttonText: `Solicitar Preço - ${service.title}`,
+                        buttonUrl: whatsappUrl,
+                        clickCategory: 'service_quote_clicks'
+                      });
+                    }}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white hover:bg-brand-orange/10 border border-brand-orange/20 hover:border-brand-orange text-brand-orange text-xs font-semibold transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-xs"

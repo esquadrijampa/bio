@@ -7,11 +7,19 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Share2, MapPin, CheckCircle, Copy, Check } from 'lucide-react';
 import { LOGO_URL, INSTAGRAM_HANDLE } from '../data';
+import { trackButtonClick } from '../utils/gtm';
 
 export default function Header() {
   const [showToast, setShowToast] = useState(false);
 
   const handleShare = async () => {
+    trackButtonClick({
+      buttonId: 'header-share-btn',
+      buttonText: 'Compartilhar link',
+      buttonUrl: window.location.href,
+      clickCategory: 'header_actions'
+    });
+
     try {
       await navigator.clipboard.writeText(window.location.href);
       setShowToast(true);

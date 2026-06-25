@@ -12,6 +12,7 @@ import Differentials from './components/Differentials';
 import Footer from './components/Footer';
 import { MessageSquare, ArrowUp, Zap } from 'lucide-react';
 import { WHATSAPP_API_BASE, WHATSAPP_NUMBER } from './data';
+import { trackButtonClick } from './utils/gtm';
 
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -77,6 +78,14 @@ export default function App() {
         <motion.a
           id="floating-whatsapp-btn"
           href={`${WHATSAPP_API_BASE}?phone=${WHATSAPP_NUMBER}&text=Olá!%20Gostaria%20de%20falar%20com%20um%20atendente%20da%20Esquadrijampa.`}
+          onClick={() => {
+            trackButtonClick({
+              buttonId: 'floating-whatsapp-btn',
+              buttonText: 'WhatsApp Flutuante',
+              buttonUrl: `${WHATSAPP_API_BASE}?phone=${WHATSAPP_NUMBER}&text=Olá!%20Gostaria%20de%20falar%20com%20um%20atendente%20da%20Esquadrijampa.`,
+              clickCategory: 'floating_actions'
+            });
+          }}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ scale: 0, opacity: 0 }}
@@ -94,7 +103,14 @@ export default function App() {
           {showScrollTop && (
             <motion.button
               id="back-to-top-btn"
-              onClick={scrollToTop}
+              onClick={(e) => {
+                trackButtonClick({
+                  buttonId: 'back-to-top-btn',
+                  buttonText: 'Voltar ao Topo',
+                  clickCategory: 'floating_actions'
+                });
+                scrollToTop();
+              }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}

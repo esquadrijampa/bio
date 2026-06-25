@@ -7,6 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MessageSquare, PhoneCall, Image, Globe } from 'lucide-react';
 import { WHATSAPP_API_BASE, WHATSAPP_NUMBER, INSTAGRAM_HANDLE } from '../data';
+import { trackButtonClick } from '../utils/gtm';
 
 export default function QuickLinks() {
   const links = [
@@ -48,7 +49,17 @@ export default function QuickLinks() {
             key={link.id}
             id={`quick-link-${link.id}`}
             href={link.url}
-            onClick={link.action || undefined}
+            onClick={(e) => {
+              trackButtonClick({
+                buttonId: `quick-link-${link.id}`,
+                buttonText: link.label,
+                buttonUrl: link.url,
+                clickCategory: 'quick_links'
+              });
+              if (link.action) {
+                (link.action as Function)(e);
+              }
+            }}
             target={link.url.startsWith('#') ? undefined : '_blank'}
             rel={link.url.startsWith('#') ? undefined : 'noopener noreferrer'}
             initial={{ y: 20, opacity: 0 }}
